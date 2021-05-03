@@ -27,10 +27,13 @@ const filePath = path.join(__dirname, 'test', 'text.txt');
 //   });
 // });
 
-fs.readFile(filePath, (err, content) => {
+fs.readFile(filePath, 'utf-8', (err, content) => {
   if (err) {
     throw err;
   }
 
-  console.log('content: ', content);
+  console.log(content);
+
+  //   const data = Buffer.from(content);
+  //   console.log('content: ', data.toString());
 });
